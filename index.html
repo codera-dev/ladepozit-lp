@@ -126,15 +126,20 @@ nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
 .pricing-guarantee svg{width:16px;height:16px;vertical-align:middle;stroke:var(--blue);fill:none;stroke-width:2;margin-right:4px}
 
 /* ── SOCIAL PROOF ── */
-.proof{padding:100px 0;background:var(--white)}
-.proof-stats{display:flex;justify-content:center;gap:64px;margin-bottom:64px;flex-wrap:wrap}
+.proof{padding:64px 0;background:var(--white)}
+.proof-header{display:flex;align-items:center;justify-content:center;gap:40px;margin-bottom:48px;flex-wrap:wrap}
+.google-badge{display:flex;align-items:center;gap:12px}
+.google-badge img{height:28px}
+.proof-stats{display:flex;justify-content:center;gap:64px;margin-bottom:48px;flex-wrap:wrap}
 .proof-stat{text-align:center}
 .proof-stat .num{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:800;color:var(--blue)}
 .proof-stat .label{font-size:.95rem;color:var(--navy);opacity:.7;margin-top:4px}
 .stars{color:var(--yellow);font-size:1.2rem;letter-spacing:2px}
 .google-link{display:inline-block;margin-top:4px;font-size:.82rem;color:var(--blue);text-decoration:underline;opacity:.7}
 .google-link:hover{opacity:1}
-.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.testimonials{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.testimonials{grid-template-columns:1fr}}
 .testimonial{padding:32px;border-radius:var(--radius);background:linear-gradient(135deg,#f8f9fc,#fefefe);border:1px solid #eef1f6}
 .testimonial p{font-size:.95rem;line-height:1.7;margin-bottom:16px;font-style:italic;color:var(--navy)}
 .testimonial .author{display:flex;align-items:center;gap:12px;font-weight:600;font-size:.9rem;color:var(--dark)}
@@ -411,7 +416,10 @@ footer a:hover{color:var(--yellow)}
 <!-- Social Proof -->
 <section class="proof">
   <div class="container">
-    <div class="proof-stats fade-in">
+    <div class="proof-header fade-in">
+      <div class="google-badge">
+        <img src="https://ladepozit.ro/wp-content/themes/la-depozit/assets/images/google-reviews.png" alt="Google Reviews badge" loading="lazy">
+      </div>
       <div class="proof-stat">
         <div class="num">1.700+</div>
         <div class="label">Clienți mulțumiți</div>
@@ -420,31 +428,54 @@ footer a:hover{color:var(--yellow)}
         <div class="num">4.9/5</div>
         <div class="stars">★★★★★</div>
         <div class="label">pe Google Reviews</div>
-        <a href="https://www.google.com/search?q=La+Depozit+recenzii" target="_blank" rel="noopener" class="google-link">Vezi recenziile pe Google →</a>
       </div>
     </div>
     <div class="testimonials">
       <div class="testimonial fade-in">
-        <p>„Ne-am mutat împreună și pur și simplu nu mai aveam loc de schiuri, biciclete și toate cutiile cu amintiri. De când avem boxa de 3.5 mp La Depozit, apartamentul arată altfel."</p>
+        <div class="stars" style="margin-bottom:8px">★★★★★</div>
+        <p>„Un serviciu premium oportun, de calitate. Curat, sigur, comod, la îndemână. Prețuri rezonabile. Facilități utile. Recomand."</p>
         <div class="author">
-          <img class="author-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Ana" loading="lazy" width="44" height="44">
-          <div>Ana & Mihai <span>— clienți din 2024</span></div>
+          <div><strong>Iulian Lupascu</strong> <span>· aug. 2025</span></div>
         </div>
       </div>
       <div class="testimonial fade-in">
-        <p>„Aplicația e genială — intru cu telefonul, las ce am de lăsat și plec. Zero bătaie de cap. Plus că e super curat acolo. Avem boxa de 1.75 mp și e perfectă."</p>
+        <div class="stars" style="margin-bottom:8px">★★★★★</div>
+        <p>„Servicii si suport extraordinare, incredibil de ușor de folosit, spațiu încăpător, foarte curat, aplicația se setează în 2 pași. Absolut minunat."</p>
         <div class="author">
-          <img class="author-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Andrei" loading="lazy" width="44" height="44">
-          <div>Cristina & Andrei <span>— clienți din 2023</span></div>
+          <div><strong>Andrei Avramescu</strong> <span>· iun. 2025</span></div>
         </div>
       </div>
       <div class="testimonial fade-in">
-        <p>„Am zis că e temporar, până ne organizăm. Un an mai târziu, tot avem boxa de 7 mp. E pur și simplu prea convenabil să renunțăm."</p>
+        <div class="stars" style="margin-bottom:8px">★★★★★</div>
+        <p>„Loc excelent pentru depozitare! Raport foarte bun calitate-preț. Acces 24/7. Totul este foarte bine organizat, cu supraveghere video. Boxele sunt foarte bine izolate. Recomand."</p>
         <div class="author">
-          <img class="author-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Radu" loading="lazy" width="44" height="44">
-          <div>Ioana & Radu <span>— clienți din 2023</span></div>
+          <div><strong>Anastasia Atanasoska</strong> <span>· iul. 2025</span></div>
         </div>
       </div>
+      <div class="testimonial fade-in">
+        <div class="stars" style="margin-bottom:8px">★★★★★</div>
+        <p>„Excelentă experiență! Civilizat, curat, bine organizat, bine situat. Comunicarea a fost ușoară, totul online! Recomand cu încredere!"</p>
+        <div class="author">
+          <div><strong>Anca Morintz</strong> <span>· sept. 2023</span></div>
+        </div>
+      </div>
+      <div class="testimonial fade-in">
+        <div class="stars" style="margin-bottom:8px">★★★★★</div>
+        <p>„Foarte curat și bine organizat spațiul de depozitare. Serviciul de transport ireproșabil. Întotdeauna am primit răspuns în foarte scurt timp."</p>
+        <div class="author">
+          <div><strong>Andreea Milescu</strong> <span>· nov. 2023</span></div>
+        </div>
+      </div>
+      <div class="testimonial fade-in">
+        <div class="stars" style="margin-bottom:8px">★★★★★</div>
+        <p>„Oameni punctuali, corecți, servicii de montare, demontare, transport, depozitare mobilă ireproșabile. Sunt plăcut surprinsă că există servicii de asemenea calitate."</p>
+        <div class="author">
+          <div><strong>Alexandra Nicolau</strong> <span>· sept. 2025</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:24px" class="fade-in">
+      <a href="https://www.google.com/maps/place/La+Depozit" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600;font-size:.95rem">Vezi toate recenziile pe Google →</a>
     </div>
     <p class="locations-bar fade-in">📍 <strong>Locații în:</strong> București · Otopeni · Ilfov</p>
   </div>
