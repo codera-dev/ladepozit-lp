@@ -259,7 +259,6 @@ nav .btn{padding:10px 24px;font-size:.88rem;border-radius:8px}
 .proof-header{display:flex;align-items:center;justify-content:center;gap:40px;margin-bottom:48px;flex-wrap:wrap}
 .google-badge{display:flex;align-items:center;gap:12px}
 .google-badge img{height:28px}
-.proof-stats{display:flex;justify-content:center;gap:64px;margin-bottom:48px;flex-wrap:wrap}
 .proof-stat{text-align:center}
 .proof-stat .num{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:800;color:var(--blue)}
 .proof-stat .label{font-size:.95rem;color:var(--navy);opacity:.7;margin-top:4px}
@@ -274,7 +273,7 @@ nav .btn{padding:10px 24px;font-size:.88rem;border-radius:8px}
 .testimonial p{font-size:.95rem;line-height:1.7;margin-bottom:16px;font-style:italic;color:var(--navy)}
 .testimonial .author{display:flex;align-items:center;gap:12px;font-weight:600;font-size:.9rem;color:var(--dark)}
 .testimonial .author span{font-weight:400;opacity:.6}
-.author-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.author-avatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1)}
 .locations-bar{text-align:center;margin-top:48px;font-size:.9rem;color:var(--navy);opacity:.7}
 .locations-bar strong{color:var(--dark);opacity:1}
 
@@ -376,6 +375,8 @@ footer a:hover{color:var(--yellow)}
 </head>
 <body>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none"><symbol id="google-g" viewBox="0 0 512 512"><path d="m120 256c0-25.367 6.989-49.13 19.131-69.477v-86.308h-86.308c-34.255 44.488-52.823 98.707-52.823 155.785s18.568 111.297 52.823 155.785h86.308v-86.308c-12.142-20.347-19.131-44.11-19.131-69.477z" fill="#fbbd00"/><path d="m256 392-60 60 60 60c57.079 0 111.297-18.568 155.785-52.823v-86.216h-86.216c-20.525 12.186-44.388 19.039-69.569 19.039z" fill="#0f9d58"/><path d="m139.131 325.477-86.308 86.308c6.782 8.808 14.167 17.243 22.158 25.235 48.352 48.351 112.639 74.98 181.019 74.98v-120c-49.624 0-93.117-26.72-116.869-66.523z" fill="#31aa52"/><path d="m512 256c0-15.575-1.41-31.179-4.192-46.377l-2.251-12.299h-249.557v120h121.452c-11.794 23.461-29.928 42.602-51.884 55.638l86.216 86.216c8.808-6.782 17.243-14.167 25.235-22.158 48.352-48.353 74.981-112.64 74.981-181.02z" fill="#3c79e6"/><path d="m352.167 159.833 10.606 10.606 84.853-84.852-10.606-10.606c-48.352-48.352-112.639-74.981-181.02-74.981l-60 60 60 60c36.326 0 70.479 14.146 96.167 39.833z" fill="#cf2d48"/><path d="m256 120v-120c-68.38 0-132.667 26.629-181.02 74.98-7.991 7.991-15.376 16.426-22.158 25.235l86.308 86.308c23.753-39.803 67.246-66.523 116.87-66.523z" fill="#eb4132"/></symbol></svg>
+
 <!-- Promo Banner -->
 <div class="promo-banner" role="banner">
   🎁 Ofertă: -30% la prima lună pentru contracte noi! <a href="https://ladepozit.ro/solicita-oferta/">Rezervă acum →</a>
@@ -430,7 +431,7 @@ footer a:hover{color:var(--yellow)}
       <p class="hero-micro">⚡ Rezervare în 5 minute · 100% online</p>
     </div>
     <div class="hero-image">
-      <img src="hero-couple.jpg" alt="Cuplu tânăr fericit cu cutii de mutat lângă boxa de depozitare La Depozit" width="600" height="450">
+      <img src="hero-couple.jpg" fetchpriority="high" alt="Cuplu tânăr fericit cu cutii de mutat lângă boxa de depozitare La Depozit" width="600" height="450">
     </div>
   </div>
 </section>
@@ -445,32 +446,32 @@ footer a:hover{color:var(--yellow)}
     <h2 class="section-title fade-in" id="problem-title">Când viața în doi aduce mai multe lucruri<br>decât încap în casă</h2>
     <div class="pain-grid">
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80" alt="Dulap plin cu haine care necesită spațiu de depozitare" loading="lazy" width="140" height="140">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=280&q=75" alt="Dulap plin cu haine care necesită spațiu de depozitare" loading="lazy" width="140" height="140">
         <h3>Dulapurile sunt pline</h3>
         <p>Dar nimeni nu vrea să renunțe la lucrurile proprii. Fiecare obiect are o poveste.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=400&q=80" alt="Bicicletă și echipament sportiv care ocupă spațiu" loading="lazy" width="140" height="140">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=280&q=75" alt="Bicicletă și echipament sportiv care ocupă spațiu" loading="lazy" width="140" height="140">
         <h3>Hobby-urile mâncă spațiu</h3>
         <p>Schiuri, biciclete, echipament de camping — toate au nevoie de un loc al lor.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Apartament mic și aglomerat fără spațiu suficient" loading="lazy" width="140" height="140">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=280&q=75" alt="Apartament mic și aglomerat fără spațiu suficient" loading="lazy" width="140" height="140">
         <h3>„Unde mai punem și asta?"</h3>
         <p>Negocierea constantă pentru fiecare centimetru pătrat din apartament.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="Cuplu cu cutii de mutat care au nevoie de depozitare" loading="lazy" width="140" height="140">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=280&q=75" alt="Cuplu cu cutii de mutat care au nevoie de depozitare" loading="lazy" width="140" height="140">
         <h3>Mutatul împreună</h3>
         <p>Două vieți, două garderobe, două seturi de lucruri — un singur apartament.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&q=80" alt="Cutii stivuite în cameră cu obiecte sezoniere" loading="lazy" width="140" height="140">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=280&q=75" alt="Cutii stivuite în cameră cu obiecte sezoniere" loading="lazy" width="140" height="140">
         <h3>Sezonul schimbărilor</h3>
         <p>Anvelope de iarnă, decorațiuni de Crăciun, trolere — lucruri folosite rar, dar esențiale.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80" alt="Living aglomerat cu obiecte care ar trebui depozitate" loading="lazy" width="140" height="140">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=280&q=75" alt="Living aglomerat cu obiecte care ar trebui depozitate" loading="lazy" width="140" height="140">
         <h3>Balconul nu e depozit</h3>
         <p>Lucrurile îngrămădite pe balcon sau în debara nu sunt o soluție pe termen lung.</p>
       </div>
@@ -488,42 +489,42 @@ footer a:hover{color:var(--yellow)}
     <h2 class="section-title fade-in" id="solution-title">Spațiul vostru de respiro</h2>
     <div class="benefits-grid">
       <div class="benefit-card fade-in">
-        <img class="benefit-photo" src="https://images.unsplash.com/photo-1558002038-1055907df827?w=400&q=80" alt="Cameră de securitate pentru monitorizare 24/7" loading="lazy" width="48" height="48">
+        <img class="benefit-photo" src="https://images.unsplash.com/photo-1558002038-1055907df827?w=96&q=75" alt="Cameră de securitate pentru monitorizare 24/7" loading="lazy" width="48" height="48">
         <div>
           <h3>Securitate 24/7</h3>
           <p>Monitorizare video non-stop și echipă de intervenție rapidă.</p>
         </div>
       </div>
       <div class="benefit-card fade-in">
-        <img class="benefit-photo" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80" alt="Aplicație mobilă pentru acces la boxa de depozitare" loading="lazy" width="48" height="48">
+        <img class="benefit-photo" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=96&q=75" alt="Aplicație mobilă pentru acces la boxa de depozitare" loading="lazy" width="48" height="48">
         <div>
           <h3>Acces prin aplicație</h3>
           <p>Intri oricând, simplu, direct de pe telefon. Fără chei, fără program.</p>
         </div>
       </div>
       <div class="benefit-card fade-in">
-        <img class="benefit-photo" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&q=80" alt="Acces auto direct la ușa boxei de depozitare" loading="lazy" width="48" height="48">
+        <img class="benefit-photo" src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=96&q=75" alt="Acces auto direct la ușa boxei de depozitare" loading="lazy" width="48" height="48">
         <div>
           <h3>Cu mașina la ușa boxei</h3>
           <p>Acces auto direct. Încărcarea și descărcarea sunt la fel de simple.</p>
         </div>
       </div>
       <div class="benefit-card fade-in">
-        <img class="benefit-photo" src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=400&q=80" alt="Spațiu de depozitare curat și modern La Depozit" loading="lazy" width="48" height="48">
+        <img class="benefit-photo" src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=96&q=75" alt="Spațiu de depozitare curat și modern La Depozit" loading="lazy" width="48" height="48">
         <div>
           <h3>Spații curate și moderne</h3>
           <p>Fără praf, fără umezeală. Lucrurile tale în condiții perfecte.</p>
         </div>
       </div>
       <div class="benefit-card fade-in">
-        <img class="benefit-photo" src="https://images.unsplash.com/photo-1450101499163-c8848e968838?w=400&q=80" alt="Flexibilitate contract fără termen lung" loading="lazy" width="48" height="48">
+        <img class="benefit-photo" src="https://images.unsplash.com/photo-1450101499163-c8848e968838?w=96&q=75" alt="Flexibilitate contract fără termen lung" loading="lazy" width="48" height="48">
         <div>
           <h3>Flexibilitate maximă</h3>
           <p>Fără contract pe termen lung. Închiriezi cât ai nevoie, renunți oricând.</p>
         </div>
       </div>
       <div class="benefit-card fade-in">
-        <img class="benefit-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80" alt="Asigurare inclusă pentru bunuri depozitate" loading="lazy" width="48" height="48">
+        <img class="benefit-photo" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=96&q=75" alt="Asigurare inclusă pentru bunuri depozitate" loading="lazy" width="48" height="48">
         <div>
           <h3>Asigurare inclusă</h3>
           <p>Bunurile tale sunt protejate. Depozitezi fără griji.</p>
@@ -536,7 +537,7 @@ footer a:hover{color:var(--yellow)}
 <!-- Steps -->
 <section class="steps" aria-labelledby="steps-title">
   <div class="steps-bg" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80" alt="" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=40" alt="" loading="lazy">
   </div>
   <div class="container">
     <div style="text-align:center">
@@ -628,56 +629,56 @@ footer a:hover{color:var(--yellow)}
     </div>
     <div class="testimonials">
       <article class="testimonial fade-in">
-        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
+        <svg class="google-icon" width="28" height="28" aria-label="Google"><use href="#google-g"/></svg>
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Un serviciu premium oportun, de calitate. Curat, sigur, comod, la îndemână. Prețuri rezonabile. Facilități utile. Recomand."</p>
         <div class="author">
-          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Iulian+Lupascu&background=0C4CE2&color=fff&size=44&rounded=true&bold=true" alt="Iulian Lupascu" width="44" height="44" loading="lazy">
+          <div class="author-avatar" style="background:#0C4CE2" aria-hidden="true">IL</div>
           <div><strong>Iulian Lupascu</strong> <span>· aug. 2025</span></div>
         </div>
       </article>
       <article class="testimonial fade-in">
-        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
+        <svg class="google-icon" width="28" height="28" aria-label="Google"><use href="#google-g"/></svg>
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Servicii si suport extraordinare, incredibil de ușor de folosit, spațiu încăpător, foarte curat, aplicația se setează în 2 pași. Absolut minunat."</p>
         <div class="author">
-          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Andrei+Avramescu&background=364f60&color=fff&size=44&rounded=true&bold=true" alt="Andrei Avramescu" width="44" height="44" loading="lazy">
+          <div class="author-avatar" style="background:#364f60" aria-hidden="true">AA</div>
           <div><strong>Andrei Avramescu</strong> <span>· iun. 2025</span></div>
         </div>
       </article>
       <article class="testimonial fade-in">
-        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
+        <svg class="google-icon" width="28" height="28" aria-label="Google"><use href="#google-g"/></svg>
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Loc excelent pentru depozitare! Raport foarte bun calitate-preț. Acces 24/7. Totul este foarte bine organizat, cu supraveghere video. Boxele sunt foarte bine izolate. Recomand."</p>
         <div class="author">
-          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Anastasia+A&background=0C4CE2&color=fff&size=44&rounded=true&bold=true" alt="Anastasia Atanasoska" width="44" height="44" loading="lazy">
+          <div class="author-avatar" style="background:#0C4CE2" aria-hidden="true">AA</div>
           <div><strong>Anastasia Atanasoska</strong> <span>· iul. 2025</span></div>
         </div>
       </article>
       <article class="testimonial fade-in">
-        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
+        <svg class="google-icon" width="28" height="28" aria-label="Google"><use href="#google-g"/></svg>
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Excelentă experiență! Civilizat, curat, bine organizat, bine situat. Comunicarea a fost ușoară, totul online! Recomand cu încredere!"</p>
         <div class="author">
-          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Anca+Morintz&background=364f60&color=fff&size=44&rounded=true&bold=true" alt="Anca Morintz" width="44" height="44" loading="lazy">
+          <div class="author-avatar" style="background:#364f60" aria-hidden="true">AM</div>
           <div><strong>Anca Morintz</strong> <span>· sept. 2023</span></div>
         </div>
       </article>
       <article class="testimonial fade-in">
-        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
+        <svg class="google-icon" width="28" height="28" aria-label="Google"><use href="#google-g"/></svg>
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Foarte curat și bine organizat spațiul de depozitare. Serviciul de transport ireproșabil. Întotdeauna am primit răspuns în foarte scurt timp."</p>
         <div class="author">
-          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Andreea+Milescu&background=0C4CE2&color=fff&size=44&rounded=true&bold=true" alt="Andreea Milescu" width="44" height="44" loading="lazy">
+          <div class="author-avatar" style="background:#0C4CE2" aria-hidden="true">AM</div>
           <div><strong>Andreea Milescu</strong> <span>· nov. 2023</span></div>
         </div>
       </article>
       <article class="testimonial fade-in">
-        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
+        <svg class="google-icon" width="28" height="28" aria-label="Google"><use href="#google-g"/></svg>
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Oameni punctuali, corecți, servicii de montare, demontare, transport, depozitare mobilă ireproșabile. Sunt plăcut surprinsă că există servicii de asemenea calitate."</p>
         <div class="author">
-          <img class="author-avatar" src="https://ui-avatars.com/api/?name=Alexandra+Nicolau&background=364f60&color=fff&size=44&rounded=true&bold=true" alt="Alexandra Nicolau" width="44" height="44" loading="lazy">
+          <div class="author-avatar" style="background:#364f60" aria-hidden="true">AN</div>
           <div><strong>Alexandra Nicolau</strong> <span>· sept. 2025</span></div>
         </div>
       </article>
