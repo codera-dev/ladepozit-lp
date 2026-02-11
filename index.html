@@ -31,19 +31,22 @@ a{text-decoration:none;color:inherit}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s ease}
-nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.06);padding:12px 0}
-nav .container{display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center}
-.logo-img{height:36px;width:auto;transition:opacity .3s}
-.logo-img-scrolled{height:36px;width:auto;position:absolute;opacity:0;transition:opacity .3s}
-nav:not(.scrolled) .logo-img{opacity:1;filter:brightness(0) invert(1)}
-nav:not(.scrolled) .logo-img-scrolled{opacity:0}
-nav.scrolled .logo-img{opacity:0;position:absolute}
-nav.scrolled .logo-img-scrolled{opacity:1;position:relative}
-nav .btn{padding:12px 28px;font-size:.95rem}
-nav:not(.scrolled) .nav-cta{background:var(--yellow);color:var(--dark)}
-nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:all .3s ease;background:var(--white);box-shadow:0 2px 20px rgba(0,0,0,.06)}
+nav .container{display:flex;align-items:center;justify-content:space-between;padding-top:0;padding-bottom:0}
+.nav-left{display:flex;align-items:center;gap:32px}
+.logo{display:flex;align-items:center;background:var(--blue);padding:12px 20px;margin:-0px 0;border-radius:0 0 12px 12px}
+.logo-img{height:44px;width:auto;filter:brightness(0) invert(1)}
+.logo-img-scrolled{display:none}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--navy);transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-phone{display:flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--dark)}
+.nav-phone svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2}
+nav .btn{padding:10px 24px;font-size:.88rem;border-radius:8px}
+.nav-cta{background:var(--yellow);color:var(--dark);font-weight:700}
+.nav-cta:hover{background:#e5a800}
+@media(max-width:900px){.nav-links{display:none}.nav-phone span{display:none}}
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#0a3cb8 0%,var(--blue) 40%,#1e6bf6 100%);overflow:hidden}
@@ -219,8 +222,23 @@ footer a:hover{color:var(--yellow)}
 <!-- Nav -->
 <nav id="nav">
   <div class="container">
-    <a href="https://ladepozit.ro" class="logo"><img src="https://ladepozit.ro/wp-content/themes/la-depozit/assets/images/logo.svg" alt="La Depozit" class="logo-img"><img src="https://ladepozit.ro/wp-content/themes/la-depozit/assets/images/logo.svg" alt="La Depozit" class="logo-img-scrolled"></a>
-    <a href="https://ladepozit.ro/solicita-oferta/" class="btn nav-cta"><span>Rezervă o boxă →</span></a>
+    <div class="nav-left">
+      <a href="https://ladepozit.ro" class="logo"><img src="https://ladepozit.ro/wp-content/themes/la-depozit/assets/images/logo.svg" alt="La Depozit" class="logo-img"></a>
+      <ul class="nav-links">
+        <li><a href="https://ladepozit.ro/locatii/">Locații</a></li>
+        <li><a href="https://ladepozit.ro/spatii-depozitare/">Spații depozitare</a></li>
+        <li><a href="https://ladepozit.ro/testimoniale/">Testimoniale</a></li>
+        <li><a href="https://ladepozit.ro/galerie/">Galerie</a></li>
+        <li><a href="https://ladepozit.ro/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <a href="tel:+40371713376" class="nav-phone">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>+40 371 713 376</span>
+      </a>
+      <a href="https://ladepozit.ro/solicita-oferta/" class="btn nav-cta">Rezervă</a>
+    </div>
   </div>
 </nav>
 
