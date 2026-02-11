@@ -74,12 +74,14 @@ nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
 .problem{padding:100px 0;background:var(--white)}
 .section-label{display:inline-block;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:12px}
 .section-title{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:56px;max-width:600px}
-.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
-.pain-card{padding:32px;border-radius:var(--radius);background:linear-gradient(135deg,#f8f9fc,#f0f3fa);border:1px solid rgba(12,76,226,.06);transition:transform .3s;text-align:center}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.pain-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.pain-grid{grid-template-columns:1fr}}
+.pain-card{padding:28px;border-radius:var(--radius);background:linear-gradient(135deg,#f8f9fc,#f0f3fa);border:1px solid rgba(12,76,226,.06);transition:transform .3s;text-align:center}
 .pain-card:hover{transform:translateY(-4px)}
-.pain-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.pain-photo{width:140px;height:140px;border-radius:16px;object-fit:cover;margin:0 auto 20px;display:block;box-shadow:0 4px 16px rgba(0,0,0,.1)}
 .pain-card h3{font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:8px}
-.pain-card p{font-size:.93rem;color:var(--navy);opacity:.8;text-align:left}
+.pain-card p{font-size:.9rem;color:var(--navy);opacity:.8}
 
 /* ── SECTION DIVIDER ── */
 .section-divider{height:2px;background:linear-gradient(90deg,transparent,var(--blue-light),var(--blue),var(--blue-light),transparent);margin:0;border:none;opacity:.4}
@@ -257,28 +259,38 @@ footer a:hover{color:var(--yellow)}
 <!-- Problem -->
 <section class="problem" id="problema">
   <div class="container">
-    <span class="section-label fade-in">Problema</span>
-    <h2 class="section-title fade-in">Viața în doi e frumoasă.<br>Dar spațiul?</h2>
+    <span class="section-label fade-in">De ce ai nevoie de spațiu extra?</span>
+    <h2 class="section-title fade-in">Când viața în doi aduce mai multe lucruri<br>decât încap în casă</h2>
     <div class="pain-grid">
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80" alt="Dulap plin cu haine" loading="lazy" width="80" height="80">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80" alt="Dulap plin cu haine" loading="lazy">
         <h3>Dulapurile sunt pline</h3>
         <p>Dar nimeni nu vrea să renunțe la lucrurile proprii. Fiecare obiect are o poveste.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=400&q=80" alt="Bicicletă și echipament sportiv" loading="lazy" width="80" height="80">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=400&q=80" alt="Bicicletă și echipament sportiv" loading="lazy">
         <h3>Hobby-urile mâncă spațiu</h3>
-        <p>Schiuri, biciclete, echipament de camping, colecții — toate au nevoie de un loc.</p>
+        <p>Schiuri, biciclete, echipament de camping — toate au nevoie de un loc al lor.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Apartament mic și aglomerat" loading="lazy" width="80" height="80">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Apartament mic și aglomerat" loading="lazy">
         <h3>„Unde mai punem și asta?"</h3>
         <p>Negocierea constantă pentru fiecare centimetru pătrat din apartament.</p>
       </div>
       <div class="pain-card fade-in">
-        <img class="pain-photo" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="Cuplu cu cutii de mutat" loading="lazy" width="80" height="80">
-        <h3>Sharing is caring</h3>
-        <p>Dar spațiul din casă e limitat. Iubirea nu crește metri pătrați.</p>
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="Cuplu cu cutii de mutat" loading="lazy">
+        <h3>Mutatul împreună</h3>
+        <p>Două vieți, două garderobe, două seturi de lucruri — un singur apartament.</p>
+      </div>
+      <div class="pain-card fade-in">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=400&q=80" alt="Cutii stivuite în cameră" loading="lazy">
+        <h3>Sezonul schimbărilor</h3>
+        <p>Anvelope de iarnă, decorațiuni de Crăciun, trolere — lucruri folosite rar, dar esențiale.</p>
+      </div>
+      <div class="pain-card fade-in">
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&q=80" alt="Living aglomerat" loading="lazy">
+        <h3>Balconul nu e depozit</h3>
+        <p>Lucrurile îngrămădite pe balcon sau în debara nu sunt o soluție pe termen lung.</p>
       </div>
     </div>
   </div>
