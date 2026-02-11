@@ -34,9 +34,13 @@ a{text-decoration:none;color:inherit}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .3s ease}
 nav.scrolled{background:rgba(255,255,255,.97);backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.06);padding:12px 0}
 nav .container{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;color:var(--white);transition:color .3s}
-.logo span{color:var(--yellow)}
-nav.scrolled .logo{color:var(--blue)}
+.logo{display:flex;align-items:center}
+.logo-img{height:36px;width:auto;transition:opacity .3s}
+.logo-img-scrolled{height:36px;width:auto;position:absolute;opacity:0;transition:opacity .3s}
+nav:not(.scrolled) .logo-img{opacity:1;filter:brightness(0) invert(1)}
+nav:not(.scrolled) .logo-img-scrolled{opacity:0}
+nav.scrolled .logo-img{opacity:0;position:absolute}
+nav.scrolled .logo-img-scrolled{opacity:1;position:relative}
 nav .btn{padding:12px 28px;font-size:.95rem}
 nav:not(.scrolled) .nav-cta{background:var(--yellow);color:var(--dark)}
 nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
@@ -208,7 +212,7 @@ footer a:hover{color:var(--yellow)}
 <!-- Nav -->
 <nav id="nav">
   <div class="container">
-    <a href="https://ladepozit.ro" class="logo">La <span>Depozit</span></a>
+    <a href="https://ladepozit.ro" class="logo"><img src="https://ladepozit.ro/wp-content/themes/la-depozit/assets/images/logo.svg" alt="La Depozit" class="logo-img"><img src="https://ladepozit.ro/wp-content/themes/la-depozit/assets/images/logo.svg" alt="La Depozit" class="logo-img-scrolled"></a>
     <a href="https://ladepozit.ro/boxe/" class="btn nav-cta"><span>Rezervă o boxă →</span></a>
   </div>
 </nav>
