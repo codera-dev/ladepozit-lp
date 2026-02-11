@@ -269,7 +269,8 @@ nav .btn{padding:10px 24px;font-size:.88rem;border-radius:8px}
 .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:900px){.testimonials{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.testimonials{grid-template-columns:1fr}}
-.testimonial{padding:32px;border-radius:var(--radius);background:linear-gradient(135deg,#f8f9fc,#fefefe);border:1px solid #eef1f6}
+.testimonial{padding:32px;border-radius:var(--radius);background:linear-gradient(135deg,#f8f9fc,#fefefe);border:1px solid #eef1f6;position:relative}
+.testimonial .google-icon{position:absolute;top:20px;right:20px;width:28px;height:28px;opacity:.7}
 .testimonial p{font-size:.95rem;line-height:1.7;margin-bottom:16px;font-style:italic;color:var(--navy)}
 .testimonial .author{display:flex;align-items:center;gap:12px;font-weight:600;font-size:.9rem;color:var(--dark)}
 .testimonial .author span{font-weight:400;opacity:.6}
@@ -615,17 +616,18 @@ footer a:hover{color:var(--yellow)}
         <img src="https://ladepozit.ro/wp-content/themes/la-depozit/assets/images/google-reviews.png" alt="Google Reviews badge La Depozit 4.9 stele" loading="lazy" width="120" height="28">
       </div>
       <div class="proof-stat">
-        <div class="num" id="proof-title">1.700+</div>
+        <div class="num" id="proof-title" data-count="1700" data-suffix="+" data-separator=".">1.700+</div>
         <div class="label">Clienți mulțumiți</div>
       </div>
       <div class="proof-stat">
-        <div class="num">4.9/5</div>
+        <div class="num" data-count-decimal="4.9" data-suffix="/5">4.9/5</div>
         <div class="stars" aria-label="4.9 din 5 stele">★★★★★</div>
         <div class="label">pe Google Reviews</div>
       </div>
     </div>
     <div class="testimonials">
       <article class="testimonial fade-in">
+        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Un serviciu premium oportun, de calitate. Curat, sigur, comod, la îndemână. Prețuri rezonabile. Facilități utile. Recomand."</p>
         <div class="author">
@@ -634,6 +636,7 @@ footer a:hover{color:var(--yellow)}
         </div>
       </article>
       <article class="testimonial fade-in">
+        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Servicii si suport extraordinare, incredibil de ușor de folosit, spațiu încăpător, foarte curat, aplicația se setează în 2 pași. Absolut minunat."</p>
         <div class="author">
@@ -642,6 +645,7 @@ footer a:hover{color:var(--yellow)}
         </div>
       </article>
       <article class="testimonial fade-in">
+        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Loc excelent pentru depozitare! Raport foarte bun calitate-preț. Acces 24/7. Totul este foarte bine organizat, cu supraveghere video. Boxele sunt foarte bine izolate. Recomand."</p>
         <div class="author">
@@ -650,6 +654,7 @@ footer a:hover{color:var(--yellow)}
         </div>
       </article>
       <article class="testimonial fade-in">
+        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Excelentă experiență! Civilizat, curat, bine organizat, bine situat. Comunicarea a fost ușoară, totul online! Recomand cu încredere!"</p>
         <div class="author">
@@ -658,6 +663,7 @@ footer a:hover{color:var(--yellow)}
         </div>
       </article>
       <article class="testimonial fade-in">
+        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Foarte curat și bine organizat spațiul de depozitare. Serviciul de transport ireproșabil. Întotdeauna am primit răspuns în foarte scurt timp."</p>
         <div class="author">
@@ -666,6 +672,7 @@ footer a:hover{color:var(--yellow)}
         </div>
       </article>
       <article class="testimonial fade-in">
+        <img class="google-icon" src="google-icon.svg" alt="Google" width="28" height="28">
         <div class="stars" style="margin-bottom:8px" aria-label="5 stele">★★★★★</div>
         <p>„Oameni punctuali, corecți, servicii de montare, demontare, transport, depozitare mobilă ireproșabile. Sunt plăcut surprinsă că există servicii de asemenea calitate."</p>
         <div class="author">
@@ -885,6 +892,37 @@ window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scr
 // Fade-in observer
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+// Counter animation
+function animateCounters(){
+  document.querySelectorAll('[data-count],[data-count-decimal]').forEach(el=>{
+    const isDecimal=el.hasAttribute('data-count-decimal');
+    const target=isDecimal?parseFloat(el.dataset.countDecimal):parseInt(el.dataset.count);
+    const suffix=el.dataset.suffix||'';
+    const sep=el.dataset.separator||'';
+    const duration=1800;
+    const start=performance.now();
+    function update(now){
+      const progress=Math.min((now-start)/duration,1);
+      const eased=1-Math.pow(1-progress,3);
+      const current=isDecimal?(eased*target).toFixed(1):Math.floor(eased*target);
+      if(!isDecimal&&sep){
+        el.textContent=Number(current).toLocaleString('ro-RO').replace(/\./g,sep)+suffix;
+      }else{
+        el.textContent=current+suffix;
+      }
+      if(progress<1)requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  });
+}
+const proofSection=document.querySelector('.proof');
+if(proofSection){
+  const counterObs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){animateCounters();counterObs.unobserve(e.target)}});
+  },{threshold:.3});
+  counterObs.observe(proofSection);
+}
 
 // Sticky mobile CTA
 const stickyCta=document.getElementById('stickyCta');
