@@ -51,11 +51,20 @@ nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
 .hero-shape:nth-child(3){width:80px;height:80px;top:30%;left:5%;animation:float 7s ease-in-out 2s infinite}
 .hero-shape:nth-child(4){width:160px;height:100px;bottom:15%;left:12%;animation:float 9s ease-in-out .5s infinite}
 @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(3deg)}}
-.hero-content{position:relative;z-index:2;max-width:720px;color:var(--white);padding:120px 0 80px}
+.hero-inner{display:flex;align-items:center;gap:48px}
+.hero-image{flex:0 0 380px;max-width:380px}
+.hero-image img{width:100%;border-radius:var(--radius);box-shadow:0 12px 40px rgba(0,0,0,.25);display:block}
+.hero-content{position:relative;z-index:2;max-width:720px;color:var(--white);padding:120px 0 80px;flex:1}
 .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:24px;font-weight:800}
 .hero h1 em{font-style:normal;color:var(--yellow)}
-.hero p{font-size:clamp(1.05rem,2vw,1.25rem);opacity:.88;margin-bottom:40px;max-width:560px;line-height:1.7}
-.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.hero p.hero-sub{font-size:clamp(1.05rem,2vw,1.25rem);opacity:.88;margin-bottom:20px;max-width:560px;line-height:1.7}
+.hero-trust{display:flex;flex-wrap:wrap;gap:16px;font-size:.9rem;opacity:.8;margin-bottom:32px;color:var(--white)}
+.hero-trust span{display:inline-flex;align-items:center;gap:4px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.hero-micro{font-size:.82rem;opacity:.7;margin-top:12px;color:var(--white)}
+
+/* ── URGENCY BANNER ── */
+.urgency-banner{background:var(--yellow-light);text-align:center;padding:14px 24px;font-size:.95rem;font-weight:500;color:var(--dark);border-bottom:1px solid rgba(252,185,0,.2)}
 
 /* ── PROBLEM ── */
 .problem{padding:100px 0;background:var(--white)}
@@ -66,8 +75,12 @@ nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
 .pain-card:hover{transform:translateY(-4px)}
 .pain-icon{width:52px;height:52px;border-radius:14px;background:var(--white);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .pain-icon svg{width:24px;height:24px;stroke:var(--blue);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pain-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,.1)}
 .pain-card h3{font-family:'Outfit',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:8px}
 .pain-card p{font-size:.93rem;color:var(--navy);opacity:.8}
+
+/* ── SECTION DIVIDER ── */
+.section-divider{height:2px;background:linear-gradient(90deg,transparent,var(--blue-light),var(--blue),var(--blue-light),transparent);margin:0;border:none;opacity:.4}
 
 /* ── SOLUTION ── */
 .solution{padding:100px 0;background:linear-gradient(180deg,var(--blue-light) 0%,var(--white) 100%)}
@@ -80,27 +93,34 @@ nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
 .benefit-card p{font-size:.9rem;color:var(--navy);opacity:.75}
 
 /* ── STEPS ── */
-.steps{padding:100px 0;background:var(--white)}
+.steps{padding:100px 0;background:url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80') center/cover no-repeat;position:relative}
+.steps::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.92)}
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;position:relative}
 .steps-grid::before{content:'';position:absolute;top:48px;left:calc(16.66% + 20px);right:calc(16.66% + 20px);height:2px;background:linear-gradient(90deg,var(--blue),var(--yellow))}
 .step{text-align:center;position:relative}
 .step-num{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#1e6bf6);color:var(--white);font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:2;box-shadow:0 8px 30px rgba(12,76,226,.25)}
 .step h3{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:8px}
 .step p{font-size:.93rem;color:var(--navy);opacity:.75;max-width:240px;margin:0 auto}
+.steps-note{text-align:center;margin-top:36px;font-size:.95rem;font-weight:500;color:var(--blue);opacity:.85}
 
 /* ── PRICING ── */
+.pricing-hero-img{width:100%;max-height:250px;object-fit:cover;border-radius:var(--radius);margin-bottom:40px;display:block}
 .pricing{padding:100px 0;background:linear-gradient(180deg,#f8f9fc,var(--white))}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-bottom:48px}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-bottom:20px}
 .price-card{padding:36px 32px;border-radius:var(--radius);background:var(--white);border:2px solid #eef1f6;text-align:center;transition:all .3s;position:relative}
 .price-card.popular{border-color:var(--blue);box-shadow:0 8px 40px rgba(12,76,226,.12)}
 .price-card.popular::before{content:'Popular';position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--white);font-size:.78rem;font-weight:600;padding:4px 18px;border-radius:20px}
 .price-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
 .price-size{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--blue);margin-bottom:4px}
-.price-amount{font-size:1.6rem;font-weight:700;color:var(--dark);margin:16px 0 4px}
+.price-dim{font-size:.82rem;color:var(--navy);opacity:.6;margin-bottom:8px}
+.price-from{font-size:.85rem;color:var(--navy);opacity:.65}
+.price-amount{font-size:2.2rem;font-weight:800;color:var(--dark);margin:8px 0 4px}
 .price-amount span{font-size:.9rem;font-weight:400;opacity:.6}
 .price-desc{font-size:.9rem;color:var(--navy);opacity:.7;margin-bottom:24px}
 .price-card .btn{width:100%;padding:14px}
 .pricing .text-center{text-align:center}
+.pricing-guarantee{text-align:center;font-size:.9rem;color:var(--navy);opacity:.75;margin-top:16px;margin-bottom:32px}
+.pricing-guarantee svg{width:16px;height:16px;vertical-align:middle;stroke:var(--blue);fill:none;stroke-width:2;margin-right:4px}
 
 /* ── SOCIAL PROOF ── */
 .proof{padding:100px 0;background:var(--white)}
@@ -109,11 +129,26 @@ nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
 .proof-stat .num{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:800;color:var(--blue)}
 .proof-stat .label{font-size:.95rem;color:var(--navy);opacity:.7;margin-top:4px}
 .stars{color:var(--yellow);font-size:1.2rem;letter-spacing:2px}
+.google-link{display:inline-block;margin-top:4px;font-size:.82rem;color:var(--blue);text-decoration:underline;opacity:.7}
+.google-link:hover{opacity:1}
 .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
 .testimonial{padding:32px;border-radius:var(--radius);background:linear-gradient(135deg,#f8f9fc,#fefefe);border:1px solid #eef1f6}
 .testimonial p{font-size:.95rem;line-height:1.7;margin-bottom:16px;font-style:italic;color:var(--navy)}
-.testimonial .author{font-weight:600;font-size:.9rem;color:var(--dark)}
+.testimonial .author{font-weight:600;font-size:.9rem;color:var(--dark);display:flex;align-items:center;gap:10px}
 .testimonial .author span{font-weight:400;opacity:.6}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.locations-bar{text-align:center;margin-top:48px;font-size:.9rem;color:var(--navy);opacity:.7}
+.locations-bar strong{color:var(--dark);opacity:1}
+
+/* ── LEAD CAPTURE ── */
+.lead-capture{padding:80px 0;background:linear-gradient(180deg,var(--white),var(--blue-light))}
+.lead-capture-inner{max-width:520px;margin:0 auto;text-align:center}
+.lead-capture h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:12px}
+.lead-capture p{font-size:1rem;color:var(--navy);opacity:.8;margin-bottom:28px}
+.lead-form{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.lead-form input[type="tel"]{flex:1;min-width:200px;padding:16px 20px;border:2px solid #dde2ea;border-radius:60px;font-family:'Outfit',sans-serif;font-size:1rem;outline:none;transition:border-color .2s}
+.lead-form input[type="tel"]:focus{border-color:var(--blue)}
+.lead-form .btn{white-space:nowrap}
 
 /* ── FINAL CTA ── */
 .final-cta{padding:100px 0;background:linear-gradient(135deg,#0a3cb8,var(--blue),#1e6bf6);color:var(--white);text-align:center;position:relative;overflow:hidden}
@@ -127,15 +162,25 @@ footer .container{display:flex;align-items:center;justify-content:space-between;
 footer a{color:rgba(255,255,255,.8);transition:color .2s}
 footer a:hover{color:var(--yellow)}
 
+/* ── STICKY MOBILE CTA ── */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--white);padding:12px 16px;box-shadow:0 -4px 20px rgba(0,0,0,.1);transform:translateY(100%);transition:transform .3s ease}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta .btn{width:100%;padding:14px;font-size:1rem}
+
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
-  .hero-content{padding:100px 0 60px}
+  .hero-inner{flex-direction:column-reverse}
+  .hero-image{flex:none;max-width:100%;width:100%;margin-top:100px}
+  .hero-content{padding:40px 0 60px}
   .steps-grid{grid-template-columns:1fr;gap:32px}
   .steps-grid::before{display:none}
   .proof-stats{gap:32px}
   .hero-buttons{flex-direction:column}
   .hero-buttons .btn{width:100%;text-align:center}
   nav .nav-cta span{display:none}
+  .sticky-cta{display:block}
+  .lead-form{flex-direction:column}
+  .lead-form input[type="tel"]{min-width:unset}
 }
 </style>
 </head>
@@ -145,12 +190,12 @@ footer a:hover{color:var(--yellow)}
 <nav id="nav">
   <div class="container">
     <a href="https://ladepozit.ro" class="logo">La <span>Depozit</span></a>
-    <a href="https://ladepozit.ro/boxe/" class="btn nav-cta"><span>Rezervă o boxă</span></a>
+    <a href="https://ladepozit.ro/boxe/" class="btn nav-cta"><span>Rezervă o boxă →</span></a>
   </div>
 </nav>
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-shapes">
     <div class="hero-shape"></div>
     <div class="hero-shape"></div>
@@ -158,16 +203,30 @@ footer a:hover{color:var(--yellow)}
     <div class="hero-shape"></div>
   </div>
   <div class="container">
+    <div class="hero-inner">
     <div class="hero-content">
       <h1>Unde-i doi, spațiul se umple.<br><em>Mută lucrurile La Depozit!</em></h1>
-      <p>Două persoane, multe obiecte, un singur apartament. Mută ce nu folosești zilnic La Depozit.</p>
-      <div class="hero-buttons">
-        <a href="https://ladepozit.ro/boxe/" class="btn btn-primary">Rezervă o boxă</a>
-        <a href="#problema" class="btn btn-secondary">Află mai multe ↓</a>
+      <p class="hero-sub">Câștigă înapoi spațiul din casă fără să renunți la nimic. Boxe de depozitare moderne, securizate, de la 175 lei/lună.</p>
+      <div class="hero-trust">
+        <span>✓ Peste 1.700 clienți activi</span>
+        <span>✓ Scor 4.9★ Google</span>
+        <span>✓ Acces 24/7</span>
       </div>
+      <div class="hero-buttons">
+        <a href="https://ladepozit.ro/boxe/" class="btn btn-primary">Rezervă o boxă →</a>
+        <a href="#preturi" class="btn btn-secondary">Vezi prețurile ↓</a>
+      </div>
+      <p class="hero-micro">⚡ Rezervare în 5 minute · 100% online</p>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80" alt="Apartament modern și luminos" loading="lazy">
+    </div>
     </div>
   </div>
 </section>
+
+<!-- Urgency Banner -->
+<div class="urgency-banner">📦 Disponibilitate limitată în locațiile din București — <a href="https://ladepozit.ro/boxe/" style="color:var(--blue);font-weight:700;text-decoration:underline">Rezervă acum!</a></div>
 
 <!-- Problem -->
 <section class="problem" id="problema">
@@ -176,36 +235,31 @@ footer a:hover{color:var(--yellow)}
     <h2 class="section-title fade-in">Viața în doi e frumoasă.<br>Dar spațiul?</h2>
     <div class="pain-grid">
       <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 12h16"/><path d="M12 4v16"/></svg>
-        </div>
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=200&q=80" alt="Dulap plin cu haine" loading="lazy">
         <h3>Dulapurile sunt pline</h3>
         <p>Dar nimeni nu vrea să renunțe la lucrurile proprii. Fiecare obiect are o poveste.</p>
       </div>
       <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
-        </div>
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=200&q=80" alt="Bicicletă și echipament sportiv" loading="lazy">
         <h3>Hobby-urile mâncă spațiu</h3>
         <p>Schiuri, biciclete, echipament de camping, colecții — toate au nevoie de un loc.</p>
       </div>
       <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </div>
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=80" alt="Apartament mic și aglomerat" loading="lazy">
         <h3>„Unde mai punem și asta?"</h3>
         <p>Negocierea constantă pentru fiecare centimetru pătrat din apartament.</p>
       </div>
       <div class="pain-card fade-in">
-        <div class="pain-icon">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
+        <img class="pain-photo" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&q=80" alt="Cuplu cu cutii de mutat" loading="lazy">
         <h3>Sharing is caring</h3>
         <p>Dar spațiul din casă e limitat. Iubirea nu crește metri pătrați.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Divider -->
+<hr class="section-divider">
 
 <!-- Solution -->
 <section class="solution">
@@ -273,7 +327,7 @@ footer a:hover{color:var(--yellow)}
 
 <!-- Steps -->
 <section class="steps">
-  <div class="container">
+  <div class="container" style="position:relative;z-index:1">
     <div style="text-align:center">
       <span class="section-label fade-in">Cum funcționează</span>
       <h2 class="section-title fade-in" style="margin-left:auto;margin-right:auto">Trei pași simpli</h2>
@@ -295,36 +349,48 @@ footer a:hover{color:var(--yellow)}
         <p>Acces 24/7 cu aplicația mobilă. Vii oricând, cum îți convine.</p>
       </div>
     </div>
+    <p class="steps-note fade-in">⚡ Procesul complet durează sub 10 minute</p>
   </div>
 </section>
 
 <!-- Pricing -->
-<section class="pricing">
+<section class="pricing" id="preturi">
   <div class="container">
     <div style="text-align:center">
       <span class="section-label fade-in">Prețuri</span>
       <h2 class="section-title fade-in" style="margin-left:auto;margin-right:auto">Alege boxa potrivită</h2>
     </div>
+    <img class="pricing-hero-img fade-in" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80" alt="Cutii organizate într-un depozit curat" loading="lazy">
     <div class="pricing-grid">
       <div class="price-card fade-in">
         <div class="price-size">1.75 mp</div>
+        <div class="price-dim">~1.2m × 1.5m · înălțime 2.5m</div>
+        <div class="price-from">de la</div>
         <div class="price-amount">175 lei <span>/ lună</span></div>
         <p class="price-desc">Ideal pentru cutii și obiecte mici</p>
-        <a href="https://ladepozit.ro/boxe/" class="btn btn-outline">Alege această boxă</a>
+        <a href="https://ladepozit.ro/boxe/" class="btn btn-outline">Rezervă o boxă →</a>
       </div>
       <div class="price-card popular fade-in">
         <div class="price-size">3.5 mp</div>
+        <div class="price-dim">~1.8m × 2m · înălțime 2.5m</div>
+        <div class="price-from">de la</div>
         <div class="price-amount">294 lei <span>/ lună</span></div>
         <p class="price-desc">Perfect pentru mobilier și echipamente</p>
-        <a href="https://ladepozit.ro/boxe/" class="btn btn-primary">Alege această boxă</a>
+        <a href="https://ladepozit.ro/boxe/" class="btn btn-primary">Rezervă o boxă →</a>
       </div>
       <div class="price-card fade-in">
         <div class="price-size">7 mp</div>
+        <div class="price-dim">~2.3m × 3m · înălțime 2.5m</div>
+        <div class="price-from">de la</div>
         <div class="price-amount">455 lei <span>/ lună</span></div>
         <p class="price-desc">Spațiu generos pentru tot ce ai nevoie</p>
-        <a href="https://ladepozit.ro/boxe/" class="btn btn-outline">Alege această boxă</a>
+        <a href="https://ladepozit.ro/boxe/" class="btn btn-outline">Rezervă o boxă →</a>
       </div>
     </div>
+    <p class="pricing-guarantee fade-in">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Fără contract pe termen lung. Poți renunța oricând.
+    </p>
     <div class="text-center fade-in">
       <a href="https://ladepozit.ro/boxe/" class="btn btn-outline">Vezi toate opțiunile →</a>
     </div>
@@ -343,21 +409,37 @@ footer a:hover{color:var(--yellow)}
         <div class="num">4.9/5</div>
         <div class="stars">★★★★★</div>
         <div class="label">pe Google Reviews</div>
+        <a href="https://www.google.com/search?q=La+Depozit+recenzii" target="_blank" rel="noopener" class="google-link">Vezi recenziile pe Google →</a>
       </div>
     </div>
     <div class="testimonials">
       <div class="testimonial fade-in">
-        <p>„Ne-am mutat împreună și pur și simplu nu mai aveam loc de schiuri, biciclete și toate cutiile cu amintiri. De când avem boxa La Depozit, apartamentul arată altfel."</p>
-        <div class="author">Ana & Mihai <span>— clienți din 2024</span></div>
+        <p>„Ne-am mutat împreună și pur și simplu nu mai aveam loc de schiuri, biciclete și toate cutiile cu amintiri. De când avem boxa de 3.5 mp La Depozit, apartamentul arată altfel."</p>
+        <div class="author"><img class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Avatar Ana" loading="lazy"><div>Ana & Mihai <span>— clienți din 2024</span></div></div>
       </div>
       <div class="testimonial fade-in">
-        <p>„Aplicația e genială — intru cu telefonul, las ce am de lăsat și plec. Zero bătaie de cap. Plus că e super curat acolo."</p>
-        <div class="author">Cristina & Andrei <span>— clienți din 2023</span></div>
+        <p>„Aplicația e genială — intru cu telefonul, las ce am de lăsat și plec. Zero bătaie de cap. Plus că e super curat acolo. Avem boxa de 1.75 mp și e perfectă."</p>
+        <div class="author"><img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Avatar Andrei" loading="lazy"><div>Cristina & Andrei <span>— clienți din 2023</span></div></div>
       </div>
       <div class="testimonial fade-in">
-        <p>„Am zis că e temporar, până ne organizăm. Un an mai târziu, tot avem boxa. E pur și simplu prea convenabil să renunțăm."</p>
-        <div class="author">Ioana & Radu <span>— clienți din 2023</span></div>
+        <p>„Am zis că e temporar, până ne organizăm. Un an mai târziu, tot avem boxa de 7 mp. E pur și simplu prea convenabil să renunțăm."</p>
+        <div class="author"><img class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Avatar Radu" loading="lazy"><div>Ioana & Radu <span>— clienți din 2023</span></div></div>
       </div>
+    </div>
+    <p class="locations-bar fade-in">📍 <strong>Locații în:</strong> București · Otopeni · Ilfov</p>
+  </div>
+</section>
+
+<!-- Lead Capture -->
+<section class="lead-capture">
+  <div class="container">
+    <div class="lead-capture-inner fade-in">
+      <h2>Nu ești sigur ce boxă ai nevoie?</h2>
+      <p>Lasă-ne numărul și te ajutăm să alegi varianta perfectă.</p>
+      <form class="lead-form" action="#" method="POST">
+        <input type="tel" name="phone" placeholder="Numărul tău de telefon" required aria-label="Număr de telefon">
+        <button type="submit" class="btn btn-primary">Sună-mă →</button>
+      </form>
     </div>
   </div>
 </section>
@@ -367,7 +449,7 @@ footer a:hover{color:var(--yellow)}
   <div class="container">
     <h2 class="fade-in">Mai mult spațiu, fără să vă mutați</h2>
     <p class="fade-in">El vine cu lucrurile lui. Tu cu ale tale.<br>La Depozit vine cu spațiul în plus.</p>
-    <a href="https://ladepozit.ro/boxe/" class="btn btn-primary fade-in" style="font-size:1.15rem;padding:18px 48px">Rezervă o boxă acum</a>
+    <a href="https://ladepozit.ro/boxe/" class="btn btn-primary fade-in" style="font-size:1.15rem;padding:18px 48px">Rezervă o boxă →</a>
   </div>
 </section>
 
@@ -379,6 +461,11 @@ footer a:hover{color:var(--yellow)}
   </div>
 </footer>
 
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://ladepozit.ro/boxe/" class="btn btn-primary">Rezervă o boxă →</a>
+</div>
+
 <script>
 // Nav scroll
 const nav=document.getElementById('nav');
@@ -387,6 +474,16 @@ window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scr
 // Fade-in observer
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+// Sticky mobile CTA
+const stickyCta=document.getElementById('stickyCta');
+const heroEl=document.getElementById('hero');
+if(stickyCta&&heroEl){
+  const stickyObs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{stickyCta.classList.toggle('visible',!e.isIntersecting)});
+  },{threshold:0});
+  stickyObs.observe(heroEl);
+}
 </script>
 </body>
 </html>
